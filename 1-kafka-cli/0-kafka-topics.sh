@@ -17,20 +17,20 @@ sasl.mechanism=PLAIN
 # Start running commands
 kafka-topics.sh 
 
-kafka-topics.sh --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092
+kafka-topics.sh --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092
 
-kafka-topics.sh --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092 --create --topic first_topic
+kafka-topics.sh --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092 --create --topic first_topic
 
 kafka-topics.sh --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092 --create --topic second_topic --partitions 5
 
 # this will create a topic with an RF of 3 (behaviour of using Conduktor Platform - all topics have the same RF of 3)
-kafka-topics.sh --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092 --create --topic third_topic --replication-factor 2
+kafka-topics.sh --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092 --create --topic third_topic --replication-factor 2
 
 # list topics
-kafka-topics --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092 --list
+kafka-topics --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092 --list
 
 # describe topics
-kafka-topics.sh --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092 --topic first_topic --describe
+kafka-topics.sh --command-config playground.config --bootstrap-server adapted-skunk-13673-eu2-kafka.upstash.io:9092 --topic third_topic --describe
 
 # delete topics
 kafka-topics.sh --command-config playground.config --bootstrap-server cluster.playground.cdkt.io:9092 --topic second_topic --delete
